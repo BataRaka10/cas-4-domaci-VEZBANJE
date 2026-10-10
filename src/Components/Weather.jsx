@@ -12,23 +12,20 @@ function Weather() {
 
     let [cities, setCities] = useState([])
 
+
     function addCity() {
         console.log(country, city, temperature)
         if (country === "" || city === "" || temperature === "") {
             return
         }
 
-        // zbog spajanja dva arraya = [{ary sa 1 objektom}]
-        const newCity = [{
+        const newCity = {
             name: city,
             country: country,
-            temperature: temperature
-        }];
+            temperature: temperature,
+        };
+        
 
-        // cities.push(newCity)
-        // spred - za spajanje arraya
-        // postavi gradove - prosledimu [currentCities] - i od toga napravi nov array
-        setCities( currentCities => [...currentCities, ...newCity])
     }
 
 
@@ -59,23 +56,20 @@ function Weather() {
     //     setCities( currentCities => [...currentCities, ...newCity])
     // }
 
+    // pozivanje stastea - (e) => setCountry(e.currentTarget.value) -> uradi rirenderovanje (ispocetka kod)
     return (
         <>
             <br />
-            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="enter country" />
+            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="enter country"/>
             <br />
-            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter city" />
+            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter country"/>
             <br />
-            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter temperature" />
+            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter country"/>
             <br />
-            <button onClick={addCity}>Add city</button>
+            <button >Add city</button>
             <br />
 
-            <div>
-                { cities.map( city => (
-                    <h4>{ city.name }</h4>
-                )) }
-            </div>
+
 
             {/* da ispisemo sve gradove */}
             {/* <div>
