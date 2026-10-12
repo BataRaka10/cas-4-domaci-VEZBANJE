@@ -13,21 +13,6 @@ function Weather() {
     let [cities, setCities] = useState([])
 
 
-    function addCity() {
-        console.log(country, city, temperature)
-        if (country === "" || city === "" || temperature === "") {
-            return
-        }
-
-        const newCity = {
-            name: city,
-            country: country,
-            temperature: temperature,
-        };
-        
-
-    }
-
 
     // let [country, setCountry] = useState("");
 
@@ -60,13 +45,13 @@ function Weather() {
     return (
         <>
             <br />
-            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="enter country"/>
+            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="Enter country"/>
             <br />
-            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter country"/>
+            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="Enter city"/>
             <br />
-            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter country"/>
+            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="Enter temperature"/>
             <br />
-            <button >Add city</button>
+            <button>Add city</button>
             <br />
 
 
