@@ -4,14 +4,13 @@ import { useState } from "react";
 
 function Weather() {
 
-    let [country, setCountry] = useState("")
+    let [country, setCountry] = useState("");
 
-    let [city, setCity] = useState("")
+    let [city, setCity] = useState("");
 
-    let [temperature, setTemperature] = useState("")
+    let [temperature, setTemperature] = useState("");
 
-    let [cities, setCities] = useState([])
-
+    let [cities, setCities] = useState([]);
 
 
     // let [country, setCountry] = useState("");
@@ -45,15 +44,14 @@ function Weather() {
     return (
         <>
             <br />
-            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="Enter country"/>
+            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="enter country" />
             <br />
-            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="Enter city"/>
+            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter country" />
             <br />
-            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="Enter temperature"/>
+            <input type="nu" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter country" />
             <br />
-            <button>Add city</button>
+            <button >Add city</button>
             <br />
-
 
 
             {/* da ispisemo sve gradove */}
