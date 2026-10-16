@@ -4,13 +4,31 @@ import { useState } from "react";
 
 function Weather() {
 
-    let [country, setCountry] = useState("");
+    let [country, setCountry] = useState("")
 
-    let [city, setCity] = useState("");
+    let [city, setCity] = useState("")
 
-    let [temperature, setTemperature] = useState("");
+    let [temperature, setTemperature] = useState("")
 
-    let [cities, setCities] = useState([]);
+    let [cities, setCities] = useState([])
+
+    
+    function addCity() {
+        // console.log(country, city, temperature)
+        if (country === "" || city === "" || temperature === "") {
+            return
+        }
+
+        const newCity = [{
+            name: city,
+            country: country,
+            temperature: temperature
+        }];
+
+        // cities.push(newCity)
+
+        setCities( currentCities => [...currentCities, ...newCity])
+    }
 
 
     // let [country, setCountry] = useState("");
@@ -46,13 +64,18 @@ function Weather() {
             <br />
             <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="enter country" />
             <br />
-            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter country" />
+            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="enter city" />
             <br />
-            <input type="nu" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter country" />
+            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="enter temperature" />
             <br />
-            <button >Add city</button>
+            <button onClick={addCity}>Add city</button>
             <br />
 
+            <div>
+                { cities.map( city => (
+                    <p>{ city.name }</p>
+                )) }
+            </div>
 
             {/* da ispisemo sve gradove */}
             {/* <div>
