@@ -5,7 +5,7 @@ import { useState } from "react";
 function Weather() {
 
     let [country, setCountry] = useState("")
-    
+
     let [city, setCity] = useState("")
 
     let [temperature, setTemperature] = useState("")
@@ -19,7 +19,6 @@ function Weather() {
             return
         }
 
-        // zbog spajanja dva arraya = [{array sa 1 objektom}]
         const newCity = [{
             name: city,
             country: country,
@@ -27,11 +26,13 @@ function Weather() {
         }];
 
         // cities.push(newCity)
-
-        // spred - za spajanje arraya
+        
+        // zbog spajanja dva arraya = [{array sa 1 objektom}]
+         // spred - za spajanje arraya
         // postavi gradove - prosledimu [currentCities] - i od toga napravi nov array
         setCities( currentCities => [...currentCities, ...newCity])
     }
+
 
     // let [country, setCountry] = useState("");
 
@@ -64,11 +65,11 @@ function Weather() {
     return (
         <>
             <br />
-            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value) } placeholder="enter country"/>
+            <input type="text" onInput={ (e) => setCountry(e.currentTarget.value)} placeholder="Enter country"/>
             <br />
-            <input type="text" onInput={ (e) => setCity(e.currentTarget.value) } placeholder="enter city"/>
+            <input type="text" onInput={ (e) => setCity(e.currentTarget.value)} placeholder="Enter city"/>
             <br />
-            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value) } placeholder="enter temperature"/>
+            <input type="number" onInput={ (e) => setTemperature(e.currentTarget.value)} placeholder="Enter temperature"/>
             <br />
             <button onClick={addCity}>Add city</button>
             <br />
